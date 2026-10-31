@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-<head>
+<head><script>/* سندباد عُمان الصغير: تسجيل إنهاء اللعبة لمرفأ السفينة */function __sbDone(){var r='';try{r=(location.pathname.split('/')[1]||'').toLowerCase().replace(/\.+$/,'');var c=null;try{c=JSON.parse(localStorage.getItem('sindbad-current')||'null')}catch(e){}var w=(c&&c.name)||'';var d={};try{d=JSON.parse(localStorage.getItem('sindbad-done')||'{}')||{}}catch(e){}(d[w]=d[w]||{})[r]=Date.now();localStorage.setItem('sindbad-done',JSON.stringify(d))}catch(e){}try{if(window.parent&&window.parent!==window)window.parent.postMessage({sindbadDone:r},'*')}catch(e){}}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0f1e3d">
@@ -974,7 +974,7 @@ function grade(){
   if(t>=26)return ['رحّالة بارع','🏅'];if(t>=20)return ['رحّالة متمكّن','🥈'];if(t>=14)return ['مستكشف مجتهد','🥉'];return ['بداية موفّقة، أعد الرحلة لتجمع نجومًا أكثر','🌱'];
 }
 const MAXS=NSTOP*3+RT.length*3;
-function showEnd(){
+function showEnd(){__sbDone();
   const e=$('end'),c=$('endCard');e.classList.remove('hidden');
   const [g,ic]=grade();
   c.innerHTML=`<div class="noprint">
